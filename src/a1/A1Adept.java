@@ -10,49 +10,58 @@ public class A1Adept {
 
 		// Your code follows here.
 		int datapnts = scan.nextInt();
-		double [] item = new double [datapnts];
-		for (int i=0; i<item.length; i++) {
-			String itemName = scan.next();
-			double price = scan.nextDouble();
-		}
-		int customers = scan.nextInt();
-		double [] requests = new double [customers];
-		for (int j=0; j<requests.length; j++) {
-			String first = scan.next();
-			String last = scan.next();
-			int numOfItems = scan.nextInt();
-			double total = 0;
-			for (int k=0; k<numOfItems; k++) {
-				int quant = scan.nextInt();
-				String itemID = scan.next();
-			}
-			System.out.println(first + " " + last + " (" + total + ")");
-		}
-		/* int datapnts = scan.nextInt();
 		String[] itemName = new String [datapnts];
 		double[] itemPrice = new double [datapnts];
-		for (int i=0; i<itemName.length; i++) {
+		for (int i=0; i<datapnts; i++) {
 			itemName[i] = scan.next();
 			itemPrice[i] = scan.nextDouble();
 		}
-		double total = 0;
 		int customers = scan.nextInt();
-		double [] requests = new double [customers];
-		for (int j=0; j<requests.length; j++) {
+		double [] orderTotals = new double [customers];
+		String biggestFirst = "";
+		String biggestLast = "";
+		double biggestTotal = 0;
+		String smallestFirst = "";
+		String smallestLast = "";
+		double smallestTotal = 0;
+		for (int i=0; i<customers; i++) {
+			double total = 0;
 			String first = scan.next();
 			String last = scan.next();
 			int numOfItems = scan.nextInt();
-			for (int k=0; k<numOfItems; k++) {
+			for (int j=0; j<numOfItems; j++) {
 				int quant = scan.nextInt();
 				String itemID = scan.next();
-				for (int l=0; l<itemName.length; l++) {
-					if (itemID==itemName[l]) {
-					total = (total + itemPrice[l]) * quant;
+				for (int k=0; k<datapnts; k++) {
+					for (int l=0; l<quant; l++) {
+						if (itemID.contentEquals(itemName[k])) {
+						total = total + itemPrice[k];
+						}
 					}	
-				}
+				}		
 			}
-		System.out.println(first + " " + last + " (" + total + ")");
+			orderTotals[i] = total;
+			if (biggestTotal < total) {
+				biggestTotal = total;
+				biggestFirst = first;
+				biggestLast = last;
+			} else {
+				smallestTotal = total;
+				smallestFirst = first;
+				smallestLast = last;
+			}
 		}
-		*/
+	// calculating average
+		double combinedTotal = 0;
+		for (int i=0; i<orderTotals.length; i++) {
+			combinedTotal = combinedTotal + orderTotals[i];
+			System.out.println(combinedTotal);
+		}
+		double average = combinedTotal / orderTotals.length;
+		String biggestFixTotal = String.format("%.2f", biggestTotal);
+		String smallestFixTotal = String.format("%.2f", smallestTotal);
+		String fixAverage = String.format("%.2f", average);
+		System.out.println(average);
+		System.out.println("Biggest: " + biggestFirst + " " + biggestLast + " (" + biggestFixTotal + ") Smallest: " + smallestFirst + " " + smallestLast + " (" + smallestFixTotal + ") Average: " + fixAverage);
 	}
 }
