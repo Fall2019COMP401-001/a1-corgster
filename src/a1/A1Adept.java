@@ -60,6 +60,8 @@ public class A1Adept {
 		String biggestFixTotal = String.format("%.2f", biggestTotal);
 		String smallestFixTotal = String.format("%.2f", smallestTotal);
 		String fixAverage = String.format("%.2f", average);
-		System.out.println("Biggest: " + biggestFirst + " " + biggestLast + " (" + biggestFixTotal + ") Smallest: " + smallestFirst + " " + smallestLast + " (" + smallestFixTotal + ") Average: " + fixAverage);
+		System.out.println("Biggest: " + biggestFirst + " " + biggestLast + " (" + biggestFixTotal + ")");
+		System.out.println("Smallest: " + smallestFirst + " " + smallestLast + " (" + smallestFixTotal + ") ");
+		System.out.println("Average: " + fixAverage);
 	}
 }
