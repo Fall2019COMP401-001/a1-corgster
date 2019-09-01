@@ -50,8 +50,14 @@ public class A1Adept {
 				smallestFirst = first;
 				smallestLast = last;
 			}
+			// edge cases
+			if (customers == 1) {
+				smallestTotal = total;
+				smallestFirst = first;
+				smallestLast = last;
+			}
 		}
-	// calculating average
+		// calculating average
 		double combinedTotal = 0;
 		for (int i=0; i<orderTotals.length; i++) {
 			combinedTotal = combinedTotal + orderTotals[i];
