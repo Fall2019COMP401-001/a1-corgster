@@ -55,13 +55,11 @@ public class A1Adept {
 		double combinedTotal = 0;
 		for (int i=0; i<orderTotals.length; i++) {
 			combinedTotal = combinedTotal + orderTotals[i];
-			System.out.println(combinedTotal);
 		}
 		double average = combinedTotal / orderTotals.length;
 		String biggestFixTotal = String.format("%.2f", biggestTotal);
 		String smallestFixTotal = String.format("%.2f", smallestTotal);
 		String fixAverage = String.format("%.2f", average);
-		System.out.println(average);
 		System.out.println("Biggest: " + biggestFirst + " " + biggestLast + " (" + biggestFixTotal + ") Smallest: " + smallestFirst + " " + smallestLast + " (" + smallestFixTotal + ") Average: " + fixAverage);
 	}
 }
