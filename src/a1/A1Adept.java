@@ -41,11 +41,26 @@ public class A1Adept {
 				}		
 			}
 			orderTotals[i] = total;
-			if (biggestTotal < total) {
+			if (customers == 2 && biggestTotal < total) {
+				smallestTotal = biggestTotal;
+				smallestFirst = biggestFirst;
+				smallestLast = biggestLast;
 				biggestTotal = total;
 				biggestFirst = first;
 				biggestLast = last;
+			} else if (total <= smallestTotal) {
+				smallestTotal = total;
+				System.out.println(smallestTotal);
+				smallestFirst = first;
+				smallestLast = last;
+			} else if (biggestTotal < total) {
+				biggestTotal = total;
+				biggestFirst = first;
+				biggestLast = last;	
+			} else if (biggestTotal > total) {
+				// do nothing
 			} else {
+				System.out.println("hitting else at" + smallestTotal);
 				smallestTotal = total;
 				smallestFirst = first;
 				smallestLast = last;
