@@ -50,7 +50,6 @@ public class A1Adept {
 				biggestLast = last;
 			} else if (total <= smallestTotal) {
 				smallestTotal = total;
-				System.out.println(smallestTotal);
 				smallestFirst = first;
 				smallestLast = last;
 			} else if (biggestTotal < total) {
@@ -60,7 +59,6 @@ public class A1Adept {
 			} else if (biggestTotal > total) {
 				// do nothing
 			} else {
-				System.out.println("hitting else at" + smallestTotal);
 				smallestTotal = total;
 				smallestFirst = first;
 				smallestLast = last;
