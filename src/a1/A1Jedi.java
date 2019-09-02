@@ -23,13 +23,17 @@ public class A1Jedi {
 			String first = scan.next();
 			String last = scan.next();
 			int numOfItems = scan.nextInt();
+			boolean [] booleanArray = new boolean[datapnts];
 			for (int j=0; j<numOfItems; j++) {
 				int quant = scan.nextInt();
 				String itemID = scan.next();
 				for (int k=0; k<datapnts; k++) {
-					if (itemID.contentEquals(itemName[k])) {
-							numItem[k] += quant;
-							numCustomers[k] += 1;
+					if (itemID.contentEquals(itemName[k]) && booleanArray[k] == true) {
+						numItem[k] += quant;
+					} else if (itemID.contentEquals(itemName[k])) {
+						numItem[k] += quant;
+						numCustomers[k] += 1;
+						booleanArray[k] = true;
 					} 
 				}
 			}		
